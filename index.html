@@ -5,11 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#FAF0E7" />
-    <title>Fowy Bites — Food Menu</title>
+
+    <!-- Search crawlers and share-link previews (Facebook, WhatsApp, Twitter/X,
+         LinkedIn) read this file's raw HTML and never run the React app, so
+         every tag below has to carry real content on its own. If you change
+         BRAND.name or BRAND.tagline in src/config.js, update this file and
+         public/og-image.png (see __og-render note in README) to match. -->
+    <title>Fowy Bites — Food Menu | Order Wings, Fries & Chapman</title>
     <meta
       name="description"
-      content="Pepper wings off the fire, hot fries and a Chapman poured cold. Order from Fowy Bites."
+      content="Pepper wings off the fire, hot fries and a Chapman poured cold. Browse the Fowy Bites menu and order online — made fresh, every time."
     />
+    <link rel="canonical" href="https://fowy-bites.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fowy Bites" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:url" content="https://fowy-bites.vercel.app/" />
+    <meta property="og:title" content="Fowy Bites — Food Menu" />
+    <meta
+      property="og:description"
+      content="Pepper wings off the fire, hot fries and a Chapman poured cold. Browse the menu and order online."
+    />
+    <meta property="og:image" content="https://fowy-bites.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="Fowy Bites — Food Menu" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fowy Bites — Food Menu" />
+    <meta
+      name="twitter:description"
+      content="Pepper wings off the fire, hot fries and a Chapman poured cold. Browse the menu and order online."
+    />
+    <meta name="twitter:image" content="https://fowy-bites.vercel.app/og-image.png" />
+
+    <!-- Structured data for rich results (Google can show this as a
+         Restaurant/food business card). Keep in sync with src/config.js. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Fowy Bites",
+        "description": "Pepper wings off the fire, hot fries and a Chapman poured cold.",
+        "url": "https://fowy-bites.vercel.app/",
+        "image": "https://fowy-bites.vercel.app/og-image.png",
+        "servesCuisine": "Nigerian",
+        "priceRange": "₦₦",
+        "hasMenu": "https://fowy-bites.vercel.app/menu",
+        "acceptsReservations": "False"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -2,9 +2,16 @@ import { useEffect, useState } from 'react'
 import Flourish from '../components/Flourish'
 import ItemRow from '../components/ItemRow'
 import PlateImage from '../components/PlateImage'
+import useSEO from '../hooks/useSEO'
 import { MENU } from '../data/menu'
 
 export default function Menu() {
+  useSEO({
+    title: 'Menu — Fowy Bites | Wings, Combos, Fries & Drinks',
+    description:
+      'Pepper toss and char wings, loaded fries, combo plates and a house Chapman — see prices and order the full Fowy Bites menu online.',
+  })
+
   const [current, setCurrent] = useState(MENU[0].id)
 
   // underline whichever course is in the middle of the screen
@@ -28,6 +35,8 @@ export default function Menu() {
 
   return (
     <>
+      <h1 className="sr-only">Fowy Bites Menu</h1>
+
       <nav className="masthead coursebar" aria-label="Courses">
         <div className="masthead__inner">
           <ul>
