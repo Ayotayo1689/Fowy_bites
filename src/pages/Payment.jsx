@@ -2,10 +2,15 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Flourish from '../components/Flourish'
 import PaymentModal from '../components/PaymentModal'
+import useSEO from '../hooks/useSEO'
 import { useOrder } from '../context/OrderContext'
 import { formatMoney, DELIVERY_FEE } from '../config'
 
 export default function Payment() {
+  // a cart/checkout page has no content worth ranking, and its contents are
+  // specific to whoever is looking at it — keep it out of search results
+  useSEO({ title: 'Your Order — Fowy Bites', noindex: true })
+
   const { lines, count, subtotal, delivery, total, add, remove, clear } = useOrder()
   const [payingOpen, setPayingOpen] = useState(false)
 
