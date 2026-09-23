@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Flourish from '../components/Flourish'
 import PlateImage from '../components/PlateImage'
 import Stars from '../components/Stars'
+import useSEO from '../hooks/useSEO'
 import logo from '../assets/images/logo.webp'
 import sprig from '../assets/images/sprig.webp'
 import wings from '../assets/images/wings.webp'
@@ -53,6 +54,12 @@ const BADGES = [
 ]
 
 export default function Home() {
+  useSEO({
+    title: 'Fowy Bites — Food Menu | Order Wings, Fries & Chapman',
+    description:
+      'Pepper wings off the fire, hot fries and a Chapman poured cold. Browse the Fowy Bites menu and order online — made fresh, every time.',
+  })
+
   return (
     <>
       <header className="hero">
