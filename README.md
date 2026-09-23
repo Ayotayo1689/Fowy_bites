@@ -30,6 +30,22 @@ npm run preview  # serve the built version locally
 | `VISIT.hours` | List of `{ days, time }` rows shown under Hours. |
 | `DELIVERY_FEE` | Flat amount added to every order. `0` hides the line entirely. |
 
+**`index.html`** — the title, meta description, canonical URL, Open Graph/Twitter
+tags and the JSON-LD block are all static here, not generated from
+`src/config.js`. Search engines and link-preview bots (Facebook, WhatsApp,
+Twitter/X) read this file directly and never run the React app, so if you
+rename the brand, move domains, or change the tagline, update this file too —
+`src/pages/*.jsx` only override the title/description *after* the app has
+already loaded. `public/og-image.png` is the share-preview image; regenerate
+it (screenshot a 1200×630 card in your own brand colours) if the brand look
+changes.
+
+**`public/sitemap.xml`** / **`public/robots.txt`** — hardcoded to
+`https://fowy-bites.vercel.app`. Update both if you move to a different
+domain, and add a new `<url>` entry to the sitemap if you add pages worth
+indexing (`/payment` is deliberately excluded — it's a per-user cart, not
+content).
+
 **`src/data/menu.js`** — every price in here is a placeholder. Change them all.
 Items, descriptions and whole categories live here too; add or remove freely,
 just keep each `id` unique and don't reuse one after launch, because saved
@@ -82,6 +98,7 @@ src/
     PlateImage.jsx    crops any photo to the scalloped "flower plate" shape
     Stars.jsx         the gold star row on the rating chip and reviews
   context/OrderContext.jsx   quantities, totals, persistence
+  hooks/useSEO.js            per-page <title>/description/robots after load
   data/menu.js               categories, items, prices
   data/testimonials.js       sample reviews shown on the homepage
   pages/                     Home, Menu, Payment
